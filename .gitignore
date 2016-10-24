@@ -33,6 +33,8 @@
 # ignore everything in the root except the "wp-content" directory.
 /*
 !wp-content/
+!gulpfile.js
+!package.json
 
 # ignore all files starting with .
 .*
