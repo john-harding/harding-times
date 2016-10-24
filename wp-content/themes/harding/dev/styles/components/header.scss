@@ -1,0 +1,103 @@
+@import 'ht-toolkit';
+.header {
+
+	.search-box-wrapper {
+		display: none;
+	}
+	&__outer {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: $dark-main;
+		text-align: center;
+		z-index: 1;
+	}
+	&__select {
+		position: absolute;
+		left: 10px;
+		display: inline-block;
+		height: $header-height;
+		line-height: 53px;
+
+		button {
+			outline: none;
+			cursor: pointer;
+			color: $white;
+			background: transparent;
+			font-size: 21px;
+			border: none;
+			&.search-toggle {
+				margin: 0 10px;
+				padding: 3px 4px;
+				font-size: 18px;
+				cursor: pointer;
+			}
+		}
+
+		i {
+			display: inline-block;
+			vertical-align: middle;
+			color: $white;
+		}
+	}
+	.logo {
+		padding: 12px;
+		height: 32px;
+
+		img {
+			height: 100%;
+		}
+	}
+	&__menu {
+		//@at-root .single #{&} {
+			position: fixed;
+
+			ul {
+				position: relative;
+				left: -100%;
+				margin: 0;
+				padding: 20px 25px;
+				background: $dark-main-2;
+				list-style: none;
+				transition: left .2s ease;
+				li {
+					margin-bottom: 2px;
+					text-align: left;
+					min-width: 170px;
+					a {
+						display: block;
+						margin: 0;
+						padding: 4px 0;
+						width: 100%;
+						font-size: .9rem;
+					}
+				}
+			}
+
+			&.open {
+				ul {
+					left: 0;
+				}
+			}
+		//}
+	}
+	a {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 10px;
+		padding: 3px 4px;
+		color: $white;
+		font-size: 1.05rem;
+		letter-spacing: 1px;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&__filler {
+		position: relative;
+		height: $header-height;
+	}
+}

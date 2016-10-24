@@ -1,0 +1,31 @@
+@import 'ht-toolkit';
+
+$font-family: 'Open Sans', Arial, sans-serif;
+$header: 34, 42, 54;
+$default-font-size: 19px;
+
+html {
+	font-size: $default-font-size;
+}
+
+* {
+	font-family: $font-family;
+}
+
+h1 {
+	font-size: 34px;
+	font-weight: 400;
+
+	@include harding-breakpoint(xs) {
+		font-size: 42px;
+	}
+	@include harding-breakpoint(sm) {
+		font-size: 54px;
+	}
+}
+
+h3 {
+	margin: 0 0 10px;
+	padding: 0;
+	font-weight: 400;
+}
