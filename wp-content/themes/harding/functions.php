@@ -17,19 +17,27 @@ function html5blank_header_scripts()
 }
 
 $categories = array(
-        'Politics' => array(
-            'url' => '/politics'
-            ),
-        'Opinion' => array(
-            'url' => '/opinion'
-            ),
-        'Health' => array(
-            'url' => '/health'
-            ),
-        'Entertainment' => array(
-            'url' => '/entertainment'
-            )
-    );
+    'Politics' => array(
+        'url' => '/politics'
+        ),
+    'Opinion' => array(
+        'url' => '/opinion'
+        ),
+    'Health' => array(
+        'url' => '/health'
+        ),
+    'Entertainment' => array(
+        'url' => '/entertainment'
+        )
+);
+
+function displayCategories($categories, $boolShowTopLevelOnly = true) {
+	echo '<ul>';
+	foreach ($categories as $key => $value) {
+		echo '<li><a href="' . $value['url'] . '">' . $key . '</a></li>';
+	}
+	echo '</ul>';
+}
 
 function remove_admin_bar() {
     return false;
@@ -274,14 +282,16 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     return '<h2>' . $content . '</h2>';
 }
 
+$popularityCategories = array('highlight', 'frontpage');
 function get_top_category($cats = null) {
+    global $popularityCategories;
     if (empty($cats)) {
         $cats = get_the_category(); // category object
     }
     $top_cat_obj = array();
 
     foreach($cats as $cat) {
-        if ($cat->parent === 0 && strtolower($cat->name) !== 'highlight') {
+        if ($cat->parent === 0 && !in_array(strtolower($cat->name), $popularityCategories)) {
             $top_cat_obj[] = $cat;
         }
     }

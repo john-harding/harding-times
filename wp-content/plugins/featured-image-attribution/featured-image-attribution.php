@@ -81,8 +81,8 @@ function show_attribution_box( $page ) {
         var app = angular.module('FIAAdmin', []);
     </script>
     <div id="attribution-box" ng-controller="FIAAdminController" ng-app="FIAAdmin">
-        <h4><label for="prefaceText">Prefacing text for attribution:</label></h4>
-        <div><input type="text" name="preface_text" value="<?php echo $prefaceText; ?>" placeholder="E.g., Image credit:" id="prefaceText" ng-model="prefaceText"></div>
+        <h4><label for="prefaceText" style="text-decoration: line-through;color: #999;">Prefacing text for attribution:</label></h4>
+        <div><input type="text" name="preface_text" style="display: none;" value="<?php echo $prefaceText; ?>" placeholder="E.g., Image credit:" id="prefaceText" ng-model="prefaceText"></div>
 
         <h4><label for="attributionText">Attribution for Featured Image:</label></h4>
         <div><input type="text" name="attribution_text" value="<?php echo $attributionText; ?>" placeholder="E.g., John Doe" id="attributionText" ng-model="attributionText"></div>

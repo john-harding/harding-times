@@ -30,14 +30,10 @@
 						<img src="<?= site_url() . '/wp-content/themes/harding/images/logo.png'; ?>" alt="The Harding Times">
 					</a>
 					<nav id="menu" class="header__menu site-navigation primary-navigation" role="navigation">
-						<ul>
-							<?php
-								global $categories;
-								foreach ($categories as $key => $value) {
-									echo '<li><a href="' . $value['url'] . '">' . $key . '</a></li>';
-								}
-							?>
-						</ul>
+						<?php
+							global $categories;
+							displayCategories($categories, true);
+						?>
 					</nav>
 				</div>
 				<div class="header__filler"></div>

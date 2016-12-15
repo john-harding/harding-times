@@ -52,6 +52,7 @@
 	&__menu {
 		//@at-root .single #{&} {
 			position: fixed;
+			height: 0px;
 
 			ul {
 				position: relative;

@@ -1,5 +1,42 @@
 @import 'ht-toolkit';
 .footer {
+	padding: 13px 0 6px;
 	width: 100%;
 	background: $dark-main-2;
+
+	&__wrapper {
+		max-width: 1400px;
+		margin: 0 auto;
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+
+			li {
+				display: inline-block;
+				margin-left: 25px;
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				a {
+					display: inline-block;
+					padding: 3px 20px;
+					text-decoration: none;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		p {
+			color: $gray;
+			font-size: .8rem;
+			text-align: center;
+		}
+	}
 }
